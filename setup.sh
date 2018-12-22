@@ -64,7 +64,8 @@ echo " "
 sudo apt-get autoremove abiword audacious gnome-mplayer gnumeric light-locker-settings pidgin xpad leafpad mtpaint lightdm-gtk-greeter-settings -y
 echo "================================================================"
 echo "Installation Complete! If you had any error contact www.tysonchamp.com or"
-echo "Open a issue request on https://github.com/tysonchamp/Ubuntu-LAMP-Installer"
+echo "Open a issue request on https://github.com/tysonchamp/my-lubuntu-setup-script"
+echo "Reebot Your system Now!"
 #
 # Exit clean
 #
