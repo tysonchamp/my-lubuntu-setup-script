@@ -36,10 +36,9 @@ echo " "
 echo "================================================================"
 sudo apt-get install apache2 -y
 echo "================================================================"
-sudo apt-get install php php-gd php-common php-curl php-gmp libapache2-mod-php -y && sudo apt-get install mysql-server -y
+sudo apt-get install php php-gd php-common php-curl php-gmp libapache2-mod-php -y && sudo apt-get install mariadb-server -y
 echo "================================================================"
-sudo apt-get install phpmyadmin -y
-#echo "Include /etc/phpmyadmin/apache.conf" | cat >> /etc/apache2/apache2.conf
+# sudo apt-get install phpmyadmin -y
 echo "================================================================"
 sudo a2enmod rewrite
 echo "Setting up Virtual Host Configaration Files"
@@ -57,11 +56,14 @@ sudo apt-get install apt-transport-https
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 sudo apt-get update
-sudo apt-get install sublime-text webhttrack libreoffice gparted vlc glipper -y
+sudo apt-get install sublime-text webhttrack curl -y
 echo "================================================================"
-echo "Removing Unnessesary Softwares"
+echo "Installing Nodejs Softwares"
 echo " "
-sudo apt-get autoremove abiword audacious gnome-mplayer gnumeric light-locker-settings pidgin xpad leafpad mtpaint lightdm-gtk-greeter-settings -y
+curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
+sudo bash nodesource_setup.sh
+sudo apt install nodejs gradle default-jdk -y
+sudo npm install -g cordova
 echo "================================================================"
 echo "Installation Complete! If you had any error contact www.tysonchamp.com or"
 echo "Open a issue request on https://github.com/tysonchamp/my-lubuntu-setup-script"
