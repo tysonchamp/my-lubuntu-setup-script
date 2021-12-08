@@ -69,7 +69,7 @@ echo "Installing Android Studio"
 echo " "
 sudo add-apt-repository ppa:maarten-fonville/android-studio
 sudo apt update
-sudo apt install android-studio
+sudo apt install android-studio -y
 echo "Installation Complete! If you had any error contact www.tysonchamp.com or"
 echo "Open a issue request on https://github.com/tysonchamp/my-lubuntu-setup-script"
 echo "Reebot Your system Now!"
