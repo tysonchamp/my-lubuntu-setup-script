@@ -62,7 +62,7 @@ echo "Installing Nodejs Softwares"
 echo " "
 curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
 sudo bash nodesource_setup.sh
-sudo apt install nodejs gradle default-jdk -y
+sudo apt install nodejs gradle openjdk-8-jdk openjdk-8-jre -y
 sudo npm install -g cordova
 echo "================================================================"
 echo "Installing Android Studio"
