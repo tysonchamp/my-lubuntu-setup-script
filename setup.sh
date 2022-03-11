@@ -64,12 +64,18 @@ curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
 sudo bash nodesource_setup.sh
 sudo apt install nodejs gradle openjdk-8-jdk openjdk-8-jre -y
 sudo npm install -g cordova
+#echo "================================================================"
+#echo "Installing Android Studio"
+#echo " "
+#sudo add-apt-repository ppa:maarten-fonville/android-studio
+#sudo apt update
+#sudo apt install android-studio -y
 echo "================================================================"
-echo "Installing Android Studio"
+echo "Installing Python for Arduino"
 echo " "
-sudo add-apt-repository ppa:maarten-fonville/android-studio
-sudo apt update
-sudo apt install android-studio -y
+#sudo apt update
+sudo apt install python3 -y
+sudo apt install python-is-python3 python3-pip -y
 echo "Installation Complete! If you had any error contact www.tysonchamp.com or"
 echo "Open a issue request on https://github.com/tysonchamp/my-lubuntu-setup-script"
 echo "Reebot Your system Now!"
