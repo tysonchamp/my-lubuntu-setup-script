@@ -76,6 +76,7 @@ echo " "
 #sudo apt update
 sudo apt install python3 -y
 sudo apt install python-is-python3 python3-pip -y
+sudo pip3 install pyserial
 echo "Installation Complete! If you had any error contact www.tysonchamp.com or"
 echo "Open a issue request on https://github.com/tysonchamp/my-lubuntu-setup-script"
 echo "Reebot Your system Now!"
