@@ -1,2 +1,2 @@
 # my-lubuntu-setup-script
-Setup Ubuntu or Lubuntu 16.04 for web development
+Setup Ubuntu or Lubuntu 22.04 for web development
