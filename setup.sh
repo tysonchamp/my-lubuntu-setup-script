@@ -82,6 +82,8 @@ echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb
 sudo apt update
 sudo apt install -y mongodb-org
 sudo systemctl enable mongod
+sudo apt install php-pear -y
+sudo apt -y install php-mongodb
 sudo service mongod start
 echo "================================================================"
 echo "Installing Python for Arduino"
