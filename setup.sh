@@ -73,6 +73,17 @@ sudo apt install nodejs gradle openjdk-8-jdk openjdk-8-jre -y
 #sudo apt update
 #sudo apt install android-studio -y
 echo "================================================================"
+echo "Installing Mongodb"
+echo " "
+wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_amd64.deb
+sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2_amd64.deb
+wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list
+sudo apt update
+sudo apt install -y mongodb-org
+sudo systemctl enable mongod
+sudo service mongod start
+echo "================================================================"
 echo "Installing Python for Arduino"
 echo " "
 #sudo apt update
