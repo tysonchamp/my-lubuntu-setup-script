@@ -75,16 +75,22 @@ sudo apt install nodejs gradle openjdk-8-jdk openjdk-8-jre -y
 echo "================================================================"
 echo "Installing Mongodb"
 echo " "
-wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_amd64.deb
-sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2_amd64.deb
-wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -
-echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list
+apt-get install gnupg curl
+curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | \
+   sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg \
+   --dearmor
+echo " "
+echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
+# wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_amd64.deb
+# sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2_amd64.deb
+# wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -
+# echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list
 sudo apt update
 sudo apt install -y mongodb-org
-sudo systemctl enable mongod
+sudo systemctl start mongod
 sudo apt install php-pear -y
 sudo apt -y install php-mongodb
-sudo service mongod start
+# sudo service mongod start
 echo "================================================================"
 echo "Installing Python for Arduino"
 echo " "
