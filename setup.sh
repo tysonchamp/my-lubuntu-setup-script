@@ -61,9 +61,9 @@ sudo snap install postman
 echo "================================================================"
 echo "Installing Nodejs Softwares"
 echo " "
-curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
+curl -sL https://deb.nodesource.com/setup_20.x -o nodesource_setup.sh
 sudo bash nodesource_setup.sh
-sudo apt install nodejs gradle openjdk-8-jdk openjdk-8-jre -y
+sudo apt install nodejs gradle openjdk-17-jdk openjdk-17-jre -y
 #echo "================================================================"
 #echo "Installing Android Studio"
 #echo " "
