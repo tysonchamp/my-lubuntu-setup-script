@@ -61,7 +61,7 @@ sudo snap install postman
 echo "================================================================"
 echo "Installing Nodejs Softwares"
 echo " "
-curl -sL https://deb.nodesource.com/setup_20.x -o nodesource_setup.sh
+curl -sL https://deb.nodesource.com/setup_22.x -o nodesource_setup.sh
 sudo bash nodesource_setup.sh
 sudo apt install nodejs gradle openjdk-17-jdk openjdk-17-jre -y
 #echo "================================================================"
@@ -76,18 +76,21 @@ echo "================================================================"
 echo "Installing Mongodb"
 echo " "
 apt-get install gnupg curl
-curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | \
-   sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg \
+curl -fsSL https://www.mongodb.org/static/pgp/server-8.0.asc | \
+   sudo gpg -o /usr/share/keyrings/mongodb-server-8.0.gpg \
    --dearmor
 echo " "
-echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
+echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-8.0.gpg ] https://repo.mongodb.org/apt/ubuntu noble/mongodb-org/8.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-8.0.list
 # wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_amd64.deb
 # sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2_amd64.deb
 # wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -
 # echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list
 sudo apt update
-sudo apt install -y mongodb-org
+sudo apt-get install -y mongodb-org
 sudo systemctl start mongod
+sudo systemctl enable mongod
+sudo systemctl stop mongod
+sudo systemctl restart mongod
 sudo apt install php-pear -y
 sudo apt -y install php-mongodb
 # sudo service mongod start
@@ -96,8 +99,8 @@ echo "Installing Python for Arduino"
 echo " "
 #sudo apt update
 sudo apt install python3 -y
-sudo apt install python-is-python3 python3-pip -y
-sudo pip3 install pyserial
+#sudo apt install python-is-python3 python3-pip -y
+#sudo pip3 install pyserial
 echo "Installation Complete! If you had any error contact www.tysonchamp.com or"
 echo "Open a issue request on https://github.com/tysonchamp/my-lubuntu-setup-script"
 echo "Reebot Your system Now!"
